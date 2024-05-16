@@ -1,4 +1,4 @@
-# OpenAI Custom GPT Action Template (Peotry-FastAPI-SQLModel-Postgres-Kafka-Kong-Docker-DevContainer)
+# OpenAI Custom GPT Action Template (Poetry-FastAPI-SQLModel-Postgres-Kafka-Kong-Docker-DevContainer)
 
 ### Overview
 
