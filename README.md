@@ -3,20 +3,46 @@
 ### Overview
 
 This project provides a template for building [OpenAI Custom GPT Actions](https://platform.openai.com/docs/actions/introduction) with [microservice pattern](https://cloud.google.com/learn/what-is-microservices-architecture) using [Event Driver Architecture](https://microservices.io/patterns/data/event-driven-architecture.html).
-. The template leverages various technologies and tools to facilitate efficient development, testing, deployment, and CI/CD. The core components and their roles are as follows:
+. The template leverages various technologies and tools to facilitate efficient development, testing, deployment, and CI/CD. The core technologies and their roles are as follows:
 
-- **Python**: The primary programming language for developing GPT actions.
-- **Poetry**: Dependency management and packaging tool for Python.
-- **FastAPI**: Web framework for building APIs with Python 3.12+.
-- **SQLModel**: SQL databases interaction using Python, combining the best features of SQLAlchemy and Pydantic.
-- **Postgres**: Relational database management system.
-- **Kafka**: Distributed event streaming platform used for building real-time data pipelines and streaming applications.
-- **Kong**: API gateway for managing API requests.
+
+## Technologies Used
+
+### Backend Technologies
+- **Python**: The primary programming language used for developing GPT Actions.
+- **Poetry**: Dependency management and packaging tool for Python projects.
+- **FastAPI**: Modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints.
+- **SQLModel**: SQL databases in Python, designed for simplicity, compatibility, and robustness. It’s built on top of Pydantic and SQLAlchemy.
+- **Postgres**: Powerful, open-source object-relational database system.
+- **Kafka**: Distributed event streaming platform capable of handling trillions of events a day.
+- **Kong**: Cloud-native, fast, scalable, and distributed API gateway.
+
+### Containerization and Development
 - **Docker**: Platform for developing, shipping, and running applications in containers.
-- **Kubernetes**: Container orchestration system for automating application deployment, scaling, and management.
-- **Terraform**: Infrastructure as code tool for building, changing, and versioning infrastructure.
-- **Testcontainers**: Tool for running Docker containers for integration tests.
-- **GitHub Actions**: CI/CD tool for automating workflows.
+- **DevContainer**: Development environments hosted in containers to ensure consistency across different environments.
+
+### Deployment and Testing
+- **Kubernetes**: Container orchestration system for automating deployment, scaling, and management of containerized applications.
+- **Terraform**: Infrastructure as Code (IaC) tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share.
+- **testcontainers**: Provides lightweight, disposable instances of common databases, Selenium web browsers, or anything else that can run in a Docker container, for testing.
+- **GitHub Actions**: CI/CD tool that automates workflows, including testing and deployment.
+
+### Client Tools
+- **VSCode**: Free source-code editor made by Microsoft for Windows, Linux, and macOS.
+- **PgAdmin**: Open-source administration and development platform for PostgreSQL.
+
+## Architecture Overview
+
+The template is designed with a microservice pattern and Event-Driven Architecture to ensure each GPT Action is isolated, scalable, and easy to manage. Here’s an overview of how the components interact:
+
+1. **Microservices**: Each GPT Action is a separate microservice built using FastAPI and SQLModel, containerized with Docker.
+2. **Event-Driven Architecture**: Kafka is used for event streaming, enabling real-time data processing and communication between microservices.
+3. **API Gateway**: Kong serves as the API gateway, routing requests to the appropriate microservice.
+4. **Database**: Postgres is used for persistent data storage.
+5. **Development Environment**: DevContainer ensures a consistent development environment, and VSCode provides a powerful IDE.
+6. **Deployment**: Kubernetes manages the containerized applications, and Terraform handles infrastructure provisioning.
+7. **CI/CD**: GitHub Actions automate the testing and deployment processes.
+8. **Testing**: testcontainers facilitate isolated and reliable testing environments.
 
 ### Key Concepts and Technologies
 
