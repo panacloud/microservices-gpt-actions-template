@@ -35,7 +35,7 @@ This project provides a template for building [OpenAI Custom GPT Actions](https:
 
 The template is designed with a microservice pattern and Event-Driven Architecture to ensure each GPT Action is isolated, scalable, and easy to manage. Here’s an overview of how the components interact:
 
-1. **Microservices**: Each GPT Action is a separate microservice built using FastAPI and SQLModel, containerized with Docker.
+1. **Microservices**: Each component is a separate microservice built using FastAPI and SQLModel, containerized with Docker.
 2. **Event-Driven Architecture**: Kafka is used for event streaming, enabling real-time data processing and communication between microservices.
 3. **API Gateway**: Kong serves as the API gateway, routing requests to the appropriate microservice.
 4. **Database**: Postgres is used for persistent data storage.
